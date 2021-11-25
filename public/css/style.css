@@ -1,0 +1,302 @@
+/*----SELECTOR UNIVERSAL---*/
+* {
+    margin: 0px;
+    padding:  0px;
+    box-sizing: border-box;
+}
+
+/*----***HEADER***---*/
+
+.header {
+    display: flex;
+    padding: 5px;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.main-header {
+    background-color: #EAC926;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+.main {
+    margin-top: 170px;
+}
+
+body{
+    background-color: #ebebeb;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+.logo {
+    width: 200px;
+}
+.search {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-left: 10px;
+    position: relative;
+    
+}
+
+::placeholder {
+    font-size: 12px;
+}
+
+.fa-search{
+    background-color: white;
+    border: none;
+    padding: 4px;
+    border-radius: 5px;
+}
+.search-icon {
+    position: absolute;
+    right: 2px;
+    font-size: 12px;
+    margin-top: 1px;
+}
+.header-icons {
+    font-size: 12px;
+}
+.burger-menu {
+    text-align: center;
+}
+.burger{
+    background-color:#03264C;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+ }
+/*----END HEADER---*/
+/*----MAIN---*/
+.cuotas {
+    text-align: center;
+    font-size: 12px;
+    margin: 10px;
+}
+nav {
+    font-size: 12px;
+}
+.main-navbar ul {
+    list-style: none;
+    font-size: 16px;
+}
+.main-navbar a {
+    text-decoration: none;
+    color: #000;
+    display: inline-block;
+    padding: 5px 0;
+}
+section.banner img{
+    width: 100%;
+}
+.create-form {
+    padding: 20px 15px;
+}
+.control-form {
+    margin-bottom: 15px;
+}
+.control-form label {
+    margin-bottom: 5px;
+    display: block;
+}
+.control {
+    width: 100%;
+    padding: 8px;
+}
+.form-button {
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #39b54a;
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+
+main{
+    margin: 0% 5%;
+    text-align: center;
+}
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;   
+}
+
+.product {
+    margin: 10px;
+    background-color: white;
+    transition: display 450ms;
+}
+.product:hover {
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+.product img {
+    width: 100%;
+}
+.caja {
+    border: 1px solid #ebebeb;
+    padding: 15px;
+    text-align: left;
+    position: relative;
+}
+.imagen-product {
+    display: block;
+    font-size: 16px;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #39b54a;
+    background-color: #FFF;
+    border-radius: 50%;
+    position: absolute;
+    right: 20px;
+    top: -15px;
+    z-index: 0;
+}
+
+.fa-truck {
+    color:#39b54a;
+    transition: transform 450ms;
+}
+.fa-truck:hover {
+    transform: rotate(-90deg);
+}
+
+.price-and-discount {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.titulares {
+    font-size: 24px;
+}
+
+.price {
+    font-size: 18px;
+    width:30%;
+}
+.discount {
+    width:70%;
+    color:#39b54a;
+    font-size: 16px;
+}
+.description {
+    font-size: 16px;
+    transition: display 450ms;
+    
+}
+.description:hover {
+    display: none;
+   
+}
+
+/*----END MAIN---*/
+/*----FOOTER---*/
+.pie {
+    text-align: center;
+    margin: 30px 0px;
+    font-size: 12px;
+    background-color: white;
+    padding: 10px 30px;
+}
+
+.footer-icon {
+    font-size: 2em;
+    margin-left: 10px;
+    color:#1259c3;
+}
+
+.copyright {
+    text-align: left;
+    margin: 10px 0px;
+    background-color: white;
+    font-size: 12px;
+}
+/*----END FOOTER---*/
+/*----MEDIAS---*/
+/*----MOBILE----*/
+@media (max-width: 480px) { 
+    /*.description {
+        display:none;  
+    }*/
+    ul {
+        display:none;
+
+    }
+}
+/*----TABLET----*/
+@media (min-width: 481px) {
+    /*.product {
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }*/
+    .burger-menu {
+        display:none;
+    } 
+    main section article {
+        width: 50%;
+   }
+   .discount {
+       display:flex;
+       flex-direction: column;
+   }
+}
+
+/*----DESKTOP----*/
+@media (min-width: 769px) { 
+    .top-header {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .cuotas {
+        max-width: 200px;
+        text-align: right;
+    }
+    .main-navbar {
+        display: flex;
+        justify-content: space-between;
+     }
+    .main-navbar ul {
+         display: flex;
+         flex-direction: row;
+    }
+    .main-navbar li {
+        margin: 5px 5px 0px;
+   }
+    main section article {
+    width: 24%;
+    }
+}
+/*----LARGE DESKTOP----*/
+@media (min-width: 1200px) {
+    .main-navbar {
+        max-width: 1200px;
+        margin: auto;
+    }
+    .top-header {
+        max-width: 1200px;
+        margin: auto;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+    }
+
+    .main-navbar li {
+        margin: 0 10px;
+    }
+    .left-navbar {
+       text-align: left;
+    }
+    .right-navbar {
+       text-align: right;
+    }
+
+}
+
+
