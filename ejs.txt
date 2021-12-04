@@ -1,0 +1,35 @@
+***EJS*** (.ejs)
+Es un motor de plantillas o template engine, que permite mostrar contenido dinamico y poder reutilizarlos, y organizar mejor el codigo.
+Consume datos desde los controles y muestra en pantalla las vistas de la app, formando asi el motor de plantillas.
+Hay otros aparte de EJS como Pug, Mustache, handlebars.
+
+¿Como configurar un template engine en el proyecto? En principio express ya tiene que estar instalado, sino instalarlo con:
+npm install express --save:
+1) npm install ejs --save >>> Descarga todas las dependencias necesarias para poder usar EJS como motor de vistas.
+
+2) En app.js ejecuto el metodo app.set('view engine', 'ejs') >>> Para indicarle a express que template engine quiero usar, el primer parametro es siempre lo que queremos configurar ejemplo: 'view engine' y el segundo es el valor de la configuracion, ejemplo el template engine que voy a usar. 
+
+3) Ubicar todos los archivos ejs dentro de la carpeta views que se encuentra en la raiz. (Express ya sabe que en la carpeta views estan los ejs, si quisiera cambiarle el nombre a views tengo que avisarle a Express que lo cambie yendo a app.js y con el metodo app.set('views', __dirname + '/ejs-html') siendo ejs-html el nuevo nombre de la carpeta views.)
+
+*Si use express-generator, probablemente ya este instalado ejs, verificar el package.json para ver si tiene una version de ejs.
+
+
+**RENDERIZAR**
+Es enviar la vista al navegador. Para poder renderizar una vista, le tengo que indicar al Controller cual quiero.
+En el controlador veo algo asi:
+const mainController = {
+    home: (req,res) => {
+        res.sendFile(path.join(__dirname + '/../views/home.html'));
+}
+Express tiene 2 metodos para renderizar vistas:
+> app.render() = renderiza la vista primero y despues pasa el html a una fc callback que se encarga de enviarla.
+> res.render() = realiza los dos pasos, renderiza la vista y envia el html resultante como respuesta. Recibe como parametro un string que es el nombre del archivo de la vista que quiero usar:
+ejemplo si quiero usar home.html o home.ejs
+const mainController = {
+    home: (req,res) => {
+        res.render('home');
+}
+
+* Las imagenes son recursos estaticos que no pasan por el proceso de renderizacion, por eso no se visualizan, porque para Express todos los archivos que estan en la aplicacion son privados y no son enviados en el responde de un request. Hay que avisarle que queremos usar los archivos de public.
+Para acceder desde una vista a un archivo de public, hay que indicar en la ruta el nombre de la subcarpeta:
+<img src='/images/logo.png'>
