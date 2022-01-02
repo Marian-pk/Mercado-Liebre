@@ -9,22 +9,14 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const productsFilePath = path.join(__dirname, '../data/products.json');
 let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-// ************ Controller ************
-const mainController = {
-    home: (req,res) => {
-        res.render('home');
-    },
-    login: (req,res) => {
-        res.render('login');
-    },
-    register: (req,res) => {
-        res.render('register');
-    },
+const productController = {
+    productDetail: (req,res) => {
+        let id = req.params.id;
+        let product = products.find(product => id == product.id);
+        res.render('productDetail', {product: product},toThousand);
+    }
+
 }
 
-module.exports = mainController;
 
-
-
-
-
+module.exports = productController;
